@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
-import { Canvas } from 'react'
+import React, { useState, useEffect, useRef } from 'react';
 import "./App.css"
-import { Mesh } from 'three';
-
 function TodoApp() {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState('');
@@ -50,12 +47,39 @@ function TodoApp() {
     setTodos(updatedTodos);
   }
 
+
+  const ballsRef = useRef([]);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const x = e.clientX * 92 / window.innerWidth + '%';
+      const y = e.clientY * 70 / window.innerHeight + '%';
+
+      ballsRef.current.forEach(ball => {
+        if (ball) {
+          ball.style.left = `${x / 2}`;
+          ball.style.top = `${y / 2}`;
+          ball.style.transform = `translate(${x}, ${y})`;
+        }
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
   return (
     <div className='container'>
-      <mesh>
-        <boxBufferGeometry atach="geometry" />
-        <meshLandbortMaterial attach='material' color='red' />
-      </mesh>
+      <div className="cat">
+        <div className='eyes'>
+          <div className="eye">
+            <div className="ball" ref={(el) => ballsRef.current[0] = el}></div>
+          </div>
+          <div className="eye">
+            <div className="ball" ref={(el) => ballsRef.current[1] = el}></div>
+          </div>
+        </div>
+      </div>
+
       <h1>Todo List</h1>
       <button className='btn' onClick={handleDeleteCompleted}>Delete Completed</button>
       <form onSubmit={handleSubmit}>

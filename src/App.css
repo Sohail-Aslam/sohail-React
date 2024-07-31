@@ -7,6 +7,34 @@
   gap: 10px;
   align-items: center;
 }
+.cat{
+  background-image: url(public/cat.svg);
+  height: 159px;
+  width: 207px;
+  background-size: 200px;
+  background-repeat: no-repeat;
+}
+.eyes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 83px 8px 0 0;
+}
+.eye{
+  width: 50.7px;
+  height: 20px;
+  border-radius: 50px;
+  float: right;
+  margin: 2px;
+}
+.ball {
+  background-image: url(public/eye.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+}
 .input{
   width: 90%;
   max-width: 285px;
