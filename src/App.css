@@ -6,6 +6,7 @@
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  
 }
 .cat{
   background-image: url(public/cat.svg);
@@ -21,7 +22,7 @@
   margin: 83px 8px 0 0;
 }
 .eye{
-  width: 50.7px;
+  width: 52.7px;
   height: 20px;
   border-radius: 50px;
   float: right;
@@ -36,6 +37,8 @@
   border-radius: 50px;
 }
 .input{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+
   width: 90%;
   max-width: 285px;
   height: 40px;
@@ -52,6 +55,7 @@ form{
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  gap: 9px;
 }
 ul{
   list-style-type: none;
@@ -75,10 +79,9 @@ ul{
   min-width: 100px;
   flex-wrap: wrap;
   justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+
 }
-/* .edit{
-  margin-left: 40%;
-} */
 
 .btns{
   justify-content: center;
@@ -91,4 +94,5 @@ ul{
   text-decoration-line: inherit;
   width: fit-content;
   margin: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }

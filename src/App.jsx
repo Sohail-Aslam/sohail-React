@@ -81,10 +81,10 @@ function TodoApp() {
       </div>
 
       <h1>Todo List</h1>
-      <button className='btn' onClick={handleDeleteCompleted}>Delete Completed</button>
+      <button className='btn button-white' onClick={handleDeleteCompleted}>Delete Completed</button>
       <form onSubmit={handleSubmit}>
         <input placeholder='What the task today?' className='input' type='text' value={inputValue} onChange={handleChange} />
-        <button className='btn' type='submit'>{editIndex !== null ? 'Update Todo' : 'Add Todo'}</button>
+        <button className='btn button-white' type='submit'>{editIndex !== null ? 'Update Todo' : 'Add Todo'}</button>
       </form>
       <ul>
         {todos.map((todo, index) => (
@@ -98,7 +98,7 @@ function TodoApp() {
             </div>
             {todo.text}
             <div className='btns'>
-              <button className='btn edit' onClick={() => handleEdit(index)}>Edit</button>
+              <button className='btn button-white' onClick={() => handleEdit(index)}>Edit</button>
 
             </div>
           </li>
